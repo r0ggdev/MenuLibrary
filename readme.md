@@ -1,15 +1,24 @@
 # Menú para la consola en C++ 🖥
 
 ## ℹ Instalación y Uso 
- 1. Descarga el archivo `Menu.h`
- 2. Inclúyalo en tu carpeta de trabajo
- 3. Importa el archivo de encabezado en donde desee usarlo
- 
- ~~~C++
- // archivo .cpp u otro .h 
+ 1. Descarga la carpeta `MenuLibrary`
+ 2. Inclúyalo en su carpeta de trabajo
+ 3. Dirigite al **Explorador de soluciones** y en el proyecto da click derecho y dirigete a donde dice **propiedades** o presiona `alt+enter`
+  ![alt text](Sources/ExplorerSolution.png)
+  
+  - Ahora debes dirigirte a `propiedades > C/C++ > Directorio de inclusion adicionales` 
+  ![alt text](Sources/Properties.png)
+  ahí debes colocar la ruta de la carpeta MenuLibrary que debe estar dentro de la carpeta del proyecto. Ejemplo de la ruta `./MenuLibrary`
+  ![alt text](Sources/Properties2.png)
+  - Luego, debes dirigirte a `Vinculador > Entrada > Dependencia Adicionales` y colocar la ruta en donde se encuentra el archivo `.lib`. Ejemplo: `\MenuLibrary\StaticMenuLibrary.lib`
+   ![alt text](Sources/Properties3.png)
 
-   #include "Menu.h" 
- ~~~
+ 4. Finalmente solo debes incluir el archivo de encabezado `MenuLibrary.h`
+  ~~~C++
+  // archivo .cpp u otro .h 
+
+    #include "Menu.h" 
+  ~~~
 
 ## 📎 Descripción del programa
 
