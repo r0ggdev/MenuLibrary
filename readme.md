@@ -66,6 +66,37 @@
 Para hacer el uso de esta libreria tenemos que elegir el tipo de menu que queremos usar, luego, tenemos que definir las opciones dentro de un arreglo de tipo `const char*`, luego las pasamos con la función `addOptions(_options,...)`. 
 
 Luego debemos pasarle las funciones que se ejecutaran al momento de seleccionar alguna opcion `addOptions(_options,_functions)`.
+### Ejemplo funcional
+~~~C++
+  #include"MenuLibrary.h"
+
+  using namespace std;
+
+  int main() {
+
+    MenuLibrary::UpDown::AllOptions menu(10, 20, 4);
+    
+    const char* options[]{ "Opcion 1", "Opcion 2", "Opcion 3", "Salir" };
+    
+    vector<function<void()>> functionsMenu = {
+      []() {cout << "Seleccionaste la opcion 1"; },
+      []() {cout << "Seleccionaste la opcion 2"; },
+      []() {cout << "Seleccionaste la opcion 3"; },
+      []() {exit(0); }
+    };
+    
+    menu.addOptions(options, functionsMenu);
+
+    while (true) {
+      menu.showMenu();
+    }
+
+    return 0;
+  }
+~~~
+
+
+### Ejemplo genérico
 
 ~~~C++
     // se incluye la libreria 

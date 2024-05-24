@@ -9,6 +9,7 @@
 #include <functional>
 #include <conio.h>
 
+// define el tamaño maximo de opciones
 #define _size_ 25
 
 enum Direction {
@@ -18,20 +19,7 @@ enum Direction {
 class Entity {
 public:
 
-    Entity(float _x, float _y, short _num_options, char _symbol_left = 62, char _symbol_right = 0, short _txt_color = 0, short _bg_color = 1) {
-        x = _x;
-        y = _y;
-
-        txt_color = _txt_color;
-        bg_color = _bg_color;
-
-        num_options = _num_options;
-        symbol_left = _symbol_left;
-        symbol_right = _symbol_right;
-
-        selected_option = 0;
-        accumulated_length = 0;
-    }
+    Entity(float _x, float _y, short _num_options, char _symbol_left = 62, char _symbol_right = 0, short _txt_color = 0, short _bg_color = 1);
     ~Entity() {}
 
     virtual void addOptions(const char* _options[], std::vector<std::function<void()>> _functions);
@@ -44,10 +32,10 @@ public:
 
 private:
 
-    inline void colorReset();
+    void colorReset();
 
-    inline void setColorTxtBgColor();
-    inline void position(float _x, float _y);
+    void setColorTxtBgColor();
+    void position(float _x, float _y);
 
 protected:
 
